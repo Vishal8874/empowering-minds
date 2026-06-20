@@ -12,17 +12,17 @@ export default function SectionHeader({
   return (
     <FadeIn className={`max-w-3xl ${alignment}`}>
       {eyebrow ? (
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.32em] text-[#1594C9]">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)] sm:text-sm sm:tracking-[0.32em]">
           {eyebrow}
         </p>
       ) : null}
       <h2
-        className={`text-4xl font-black tracking-tight text-[#082C5C] sm:text-5xl ${titleClassName}`}
+        className={`text-3xl font-black tracking-tight text-[var(--color-primary)] sm:text-4xl lg:text-5xl ${titleClassName}`}
       >
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+        <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8 lg:text-lg">
           {description}
         </p>
       ) : null}

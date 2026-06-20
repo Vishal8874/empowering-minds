@@ -255,7 +255,7 @@ export const programs = [
     durationLine: "Starting 13 June 2026",
     footerDate: "24 weeks",
     ctaLabel: "View Fellowship",
-    topAccent: "bg-gradient-to-r from-[#1594C9] via-[#80C7E7] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-muted)] to-[var(--color-secondary)]",
     icon: BriefcaseBusiness,
     outcomes: [
       "Design development pathways linked to performance",
@@ -282,7 +282,7 @@ export const programs = [
     durationLine: "Starting 13 June 2026",
     footerDate: "24 weeks",
     ctaLabel: "View Maser",
-    topAccent: "bg-gradient-to-r from-[#1594C9] via-[#80C7E7] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-muted)] to-[var(--color-secondary)]",
     icon: Trophy,
     outcomes: [
       "Improve feedback and communication rhythms",
@@ -309,7 +309,7 @@ export const programs = [
     durationLine: "04 Weeks Live · 06 Weeks Blended",
     footerDate: "13 June 2026",
     ctaLabel: "View Certification",
-    topAccent: "bg-gradient-to-r from-[#1594C9] via-[#B2CF79] to-[#F2B640]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-muted)] to-[var(--color-secondary)]",
     icon: Building2,
     outcomes: [
       "Refresh learner-centered teaching practices",
@@ -336,7 +336,7 @@ export const programs = [
     durationLine: "04 Weeks Live · 06 Weeks Blended",
     footerDate: "13 June 2026",
     ctaLabel: "View Certification",
-    topAccent: "bg-gradient-to-r from-[#95B88B] via-[#D6BE5D] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-muted)] via-[var(--color-secondary)] to-[var(--color-secondary)]",
     icon: GraduationCap,
     outcomes: [
       "Build interview and workplace communication confidence",
@@ -363,7 +363,7 @@ export const programs = [
     durationLine: "Starting 15 September 2026",
     footerDate: "8 weeks",
     ctaLabel: "View Program",
-    topAccent: "bg-gradient-to-r from-[#1594C9] via-[#80C7E7] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-muted)] to-[var(--color-secondary)]",
     icon: Sparkles,
     outcomes: [
       "Develop executive presence",
@@ -390,7 +390,7 @@ export const programs = [
     durationLine: "Starting 01 October 2026",
     footerDate: "10 weeks",
     ctaLabel: "View Program",
-    topAccent: "bg-gradient-to-r from-[#95B88B] via-[#D6BE5D] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-muted)] via-[var(--color-secondary)] to-[var(--color-secondary)]",
     icon: ArrowUpRight,
     outcomes: [
       "Align people development with institutional strategy",
@@ -417,7 +417,7 @@ export const programs = [
     durationLine: "Starting 22 October 2026",
     footerDate: "8 weeks",
     ctaLabel: "View Program",
-    topAccent: "bg-gradient-to-r from-[#1594C9] via-[#80C7E7] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-muted)] to-[var(--color-secondary)]",
     icon: LineChart,
     outcomes: [
       "Run sharper goal-setting conversations",
@@ -444,7 +444,7 @@ export const programs = [
     durationLine: "Starting 05 November 2026",
     footerDate: "4 weeks",
     ctaLabel: "View Program",
-    topAccent: "bg-gradient-to-r from-[#95B88B] via-[#D6BE5D] to-[#F0A81E]",
+    topAccent: "bg-gradient-to-r from-[var(--color-muted)] via-[var(--color-secondary)] to-[var(--color-secondary)]",
     icon: HeartHandshake,
     outcomes: [
       "Speak more clearly in formal settings",

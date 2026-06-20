@@ -13,9 +13,9 @@ export default function About() {
         description={aboutContent.heroText}
       />
 
-      <section className="py-24">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <FadeIn className="overflow-hidden rounded-[36px] border border-[#B9DDED]">
+          <FadeIn className="overflow-hidden rounded-[36px] border border-[var(--color-border)]">
             <img
               src={trainerProfile.image}
               alt={trainerProfile.name}
@@ -35,32 +35,32 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2">
-            <FadeIn className="rounded-[30px] border border-[#B9DDED] bg-[#F8FBFF] p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#1594C9]">
+            <FadeIn className="rounded-[30px] border border-[var(--color-border)] bg-[var(--color-background)] p-6 sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-secondary)]">
                 Vision
               </p>
-              <p className="mt-5 text-xl leading-8 text-[#082C5C]">{aboutContent.vision}</p>
+              <p className="mt-5 text-lg leading-7 text-[var(--color-primary)] sm:text-xl sm:leading-8">{aboutContent.vision}</p>
             </FadeIn>
-            <FadeIn delay={0.08} className="rounded-[30px] border border-[#B9DDED] bg-[#F8FBFF] p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#1594C9]">
+            <FadeIn delay={0.08} className="rounded-[30px] border border-[var(--color-border)] bg-[var(--color-background)] p-6 sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-secondary)]">
                 Mission
               </p>
-              <p className="mt-5 text-xl leading-8 text-[#082C5C]">{aboutContent.mission}</p>
+              <p className="mt-5 text-lg leading-7 text-[var(--color-primary)] sm:text-xl sm:leading-8">{aboutContent.mission}</p>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Our Story" title="Why Empowering Minds began" description={aboutContent.story} />
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
@@ -70,7 +70,7 @@ export default function About() {
                   <FadeIn
                     key={value}
                     delay={index * 0.06}
-                    className="rounded-[24px] border border-[#B9DDED] bg-white p-5 shadow-sm"
+                    className="rounded-[24px] border border-[var(--color-border)] bg-white p-5 shadow-sm"
                   >
                     {value}
                   </FadeIn>
@@ -84,7 +84,7 @@ export default function About() {
                   <FadeIn
                     key={reason}
                     delay={index * 0.06}
-                    className="rounded-[24px] border border-[#B9DDED] bg-[#F8FBFF] p-5 shadow-sm"
+                    className="rounded-[24px] border border-[var(--color-border)] bg-[var(--color-background)] p-5 shadow-sm"
                   >
                     {reason}
                   </FadeIn>
@@ -96,7 +96,7 @@ export default function About() {
       </section>
 
       <CTASection
-        title="Let’s create a development journey that fits your audience."
+        title="Letâ€™s create a development journey that fits your audience."
         description="Talk to us about workshops, leadership labs, institutional growth interventions, or customized learning experiences."
       />
     </main>

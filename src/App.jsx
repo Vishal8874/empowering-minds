@@ -12,7 +12,7 @@ import Services from "./pages/Services";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F4F7FA] text-[#082C5C]">
+    <div className="min-h-screen bg-[var(--color-background)] text-[var(--color-text-primary)]">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

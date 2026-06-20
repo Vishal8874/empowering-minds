@@ -4,18 +4,20 @@
 :root {
   color-scheme: light;
   font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  background-color: #f4f7fa;
+  background-color: var(--color-background);
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: #f4f7fa;
-  color: #082c5c;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
 }
 
 * {
@@ -35,6 +37,6 @@ select {
 }
 
 ::selection {
-  background: #1594c9;
+  background: var(--color-secondary);
   color: white;
 }

@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProgramCard from "../common/ProgramCard";
 
@@ -11,7 +11,7 @@ const programs = [
     price: "₹89,250",
     duration: "24 Weeks Program",
     startDate: "13 June 2026",
-    topAccent: "bg-gradient-to-r from-[#1594C9] to-[#8FCDFE]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-muted)]",
   },
   {
     category: "STRATEGIC",
@@ -21,7 +21,7 @@ const programs = [
     price: "₹12,000",
     duration: "12 Weeks Program",
     startDate: "20 July 2026",
-    topAccent: "bg-gradient-to-r from-[#89A36A] to-[#C0D69F]",
+    topAccent: "bg-gradient-to-r from-[var(--color-muted)] to-[var(--color-soft-accent)]",
   },
   {
     category: "SPECIALIST",
@@ -31,7 +31,7 @@ const programs = [
     price: "₹29,500",
     duration: "6 Weeks Program",
     startDate: "10 August 2026",
-    topAccent: "bg-gradient-to-r from-[#D99A21] to-[#F3B560]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-soft-accent)]",
   },
   {
     category: "SPECIALIST",
@@ -51,7 +51,7 @@ const programs = [
     price: "₹39,500",
     duration: "10 Weeks Program",
     startDate: "15 September 2026",
-    topAccent: "bg-gradient-to-r from-[#1594C9] to-[#8FCDFE]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-muted)]",
   },
   {
     category: "LONG TERM",
@@ -61,7 +61,7 @@ const programs = [
     price: "₹49,000",
     duration: "20 Weeks Program",
     startDate: "01 October 2026",
-    topAccent: "bg-gradient-to-r from-[#89A36A] to-[#C0D69F]",
+    topAccent: "bg-gradient-to-r from-[var(--color-muted)] to-[var(--color-soft-accent)]",
   },
   {
     category: "SPECIALIST",
@@ -71,7 +71,7 @@ const programs = [
     price: "₹24,000",
     duration: "8 Weeks Program",
     startDate: "22 October 2026",
-    topAccent: "bg-gradient-to-r from-[#D99A21] to-[#F3B560]",
+    topAccent: "bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-soft-accent)]",
   },
   {
     category: "SPECIALIST",
@@ -87,8 +87,8 @@ const programs = [
 
 export default function ProgramsSection() {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCards = 4;
-  const maxIndex = programs.length - visibleCards;
+  const [visibleCards, setVisibleCards] = useState(4);
+  const maxIndex = Math.max(programs.length - visibleCards, 0);
 
   const nextSlide = () => {
     setStartIndex((current) => Math.min(current + 1, maxIndex));
@@ -98,25 +98,48 @@ export default function ProgramsSection() {
     setStartIndex((current) => Math.max(current - 1, 0));
   };
 
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCards(4);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
+    };
+
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
+
+    return () => {
+      window.removeEventListener("resize", updateVisibleCards);
+    };
+  }, []);
+
+  useEffect(() => {
+    setStartIndex((current) => Math.min(current, maxIndex));
+  }, [maxIndex]);
+
   return (
-    <section className="bg-[#F4F7FA] py-24">
+    <section className="bg-[var(--color-background)] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#1594C9]">
+        <div className="mb-8 flex flex-col gap-5 sm:mb-10 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-secondary)]">
               Featured learning paths
             </p>
-            <h2 className="max-w-3xl text-4xl font-black tracking-tight text-[#082C5C] sm:text-5xl">
+            <h2 className="max-w-3xl text-3xl font-black tracking-tight text-[var(--color-primary)] sm:text-4xl lg:text-5xl">
               Trending & new launch programs
             </h2>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex gap-3 self-start sm:gap-4">
             <button
               type="button"
               onClick={prevSlide}
               disabled={startIndex === 0}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#1594C9] text-[#1594C9] transition hover:bg-[#1594C9] hover:text-white disabled:cursor-not-allowed disabled:border-[#A8D4ED] disabled:text-[#A8D4E9] disabled:opacity-50"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-secondary)] text-[var(--color-secondary)] transition hover:bg-[var(--color-secondary)] hover:text-white disabled:cursor-not-allowed disabled:border-[var(--color-border)] disabled:text-[var(--color-muted)] disabled:opacity-50"
             >
               <ChevronLeft size={20} />
             </button>
@@ -124,20 +147,20 @@ export default function ProgramsSection() {
               type="button"
               onClick={nextSlide}
               disabled={startIndex === maxIndex}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#1594C9] text-[#1594C9] transition hover:bg-[#1594C9] hover:text-white disabled:cursor-not-allowed disabled:border-[#A8D4ED] disabled:text-[#A8D4E9] disabled:opacity-50"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-secondary)] text-[var(--color-secondary)] transition hover:bg-[var(--color-secondary)] hover:text-white disabled:cursor-not-allowed disabled:border-[var(--color-border)] disabled:text-[var(--color-muted)] disabled:opacity-50"
             >
               <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[32px] border border-[#B9DDED] bg-white shadow-sm">
+        <div className="overflow-hidden rounded-[32px] border border-[var(--color-border)] bg-white shadow-sm">
           <div
-            className="flex gap-6 px-4 py-6 transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${startIndex * 25}%)` }}
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${startIndex * (100 / visibleCards)}%)` }}
           >
             {programs.map((program, index) => (
-              <div key={index} className="min-w-[25%]">
+              <div key={index} className="w-full shrink-0 px-2 py-6 md:w-1/2 lg:w-1/4 lg:px-3">
                 <ProgramCard program={program} />
               </div>
             ))}

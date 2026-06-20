@@ -7,7 +7,7 @@ export default function WhatsAppFloat() {
   return (
     <div className="fixed bottom-4 right-4 z-[9999] md:bottom-6 md:right-6">
       <div className="group relative">
-        <div className="pointer-events-none absolute right-[calc(100%+12px)] top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#082C5C] px-4 py-2 text-xs font-semibold text-white opacity-0 shadow-lg transition duration-300 group-hover:opacity-100">
+        <div className="pointer-events-none absolute bottom-[calc(100%+12px)] right-0 rounded-full bg-[var(--color-primary)] px-4 py-2 text-xs font-semibold text-white opacity-0 shadow-lg transition duration-300 group-hover:opacity-100 md:bottom-auto md:right-[calc(100%+12px)] md:top-1/2 md:-translate-y-1/2 md:whitespace-nowrap">
           Chat with us on WhatsApp
         </div>
 

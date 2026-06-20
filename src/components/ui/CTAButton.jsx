@@ -9,9 +9,9 @@ export default function CTAButton({
 }) {
   const styles = {
     primary:
-      "bg-[#1594C9] text-white hover:bg-[#117ba7] shadow-[0_16px_35px_rgba(21,148,201,0.22)]",
+      "bg-[var(--color-secondary)] text-white hover:bg-[#8d5728] shadow-[0_16px_35px_rgba(169,106,45,0.22)]",
     secondary:
-      "border border-[#B9DDED] bg-white text-[#082C5C] hover:bg-[#F4F7FA]",
+      "border border-[var(--color-border)] bg-white text-[var(--color-primary)] hover:bg-[var(--color-background)]",
     ghost:
       "border border-white/25 bg-white/10 text-white hover:bg-white/20",
   };
@@ -19,10 +19,11 @@ export default function CTAButton({
   return (
     <Link
       to={to}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition ${styles[variant]} ${className}`}
+      className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-sm font-semibold transition sm:w-auto sm:px-6 ${styles[variant]} ${className}`}
     >
       {children}
       <ArrowRight size={16} />
     </Link>
   );
+
 }

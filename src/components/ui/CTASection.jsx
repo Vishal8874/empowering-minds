@@ -10,22 +10,22 @@ export default function CTASection({
   secondaryTo = "/programs",
 }) {
   return (
-    <section className="py-24">
+    <section className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <FadeIn className="overflow-hidden rounded-[36px] bg-[#082C5C] px-8 py-12 text-white shadow-[0_28px_70px_rgba(8,44,92,0.18)] sm:px-12">
+        <FadeIn className="overflow-hidden rounded-[28px] bg-[var(--color-primary)] px-5 py-10 text-white shadow-[0_28px_70px_rgba(35,66,78,0.18)] sm:rounded-[36px] sm:px-8 sm:py-12 lg:px-12">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#8FCDFE]">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)] sm:text-sm sm:tracking-[0.32em]">
                 Let&apos;s build what&apos;s next
               </p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
+              <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-200">
+              <p className="mt-5 text-sm leading-7 text-slate-200 sm:text-base sm:leading-8">
                 {description}
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <CTAButton to={primaryTo} variant="primary">
                 {primaryLabel}
               </CTAButton>

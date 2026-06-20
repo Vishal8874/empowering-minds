@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main>
       <section
-        className="relative overflow-hidden bg-[#082C5C] pt-32 text-white"
+        className="relative overflow-hidden bg-[var(--color-primary)] pt-32 text-white"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80')",
@@ -41,31 +41,31 @@ export default function Home() {
         }}
       >
         <div
-          className="absolute inset-0 bg-[#082C5C]"
-          style={{ opacity: 0.2 }}
+          className="absolute inset-0 bg-[var(--color-primary)]"
+          style={{ opacity: heroOverlayOpacity }}
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#082C5C] via-[#082C5C] to-[#082C5C]"
+          className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)] via-[var(--color-primary)] to-[var(--color-primary)]"
           style={{
             opacity: 1,
-            backgroundImage: `linear-gradient(to bottom, rgba(8, 44, 92, ${heroGradientOpacity.from}), rgba(8, 44, 92, ${heroGradientOpacity.via}), rgba(8, 44, 92, ${heroGradientOpacity.to}))`,
+            backgroundImage: `linear-gradient(to bottom, rgba(35, 66, 78, ${heroGradientOpacity.from}), rgba(35, 66, 78, ${heroGradientOpacity.via}), rgba(35, 66, 78, ${heroGradientOpacity.to}))`,
           }}
         />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <FadeIn className="max-w-2xl">
-              <h1 className="mt-8 text-5xl font-black tracking-tight text-white sm:text-6xl">
-                Developing <span className="text-[#1594C9]">People</span>.
+              <h1 className="mt-6 text-3xl font-black tracking-tight text-white sm:mt-8 sm:text-5xl lg:text-6xl">
+                Developing <span className="text-[var(--color-secondary)]">People</span>.
                 <br />
-                Transforming <span className="text-[#1594C9]">Institutions</span>.
+                Transforming <span className="text-[var(--color-secondary)]">Institutions</span>.
               </h1>
-              <p className="mt-8 max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
+              <p className="mt-6 max-w-xl text-sm leading-7 text-slate-200 sm:mt-8 sm:text-base sm:leading-8 lg:text-lg">
                 We help educational institutions, corporate teams, and emerging
                 leaders unlock their potential through leadership development,
                 human capital training, and transformational learning experiences.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
                 <CTAButton to="/programs">Explore Programs</CTAButton>
                 <CTAButton to="/contact" variant="ghost">
                   Schedule Consultation
@@ -90,10 +90,10 @@ export default function Home() {
             {/* <FadeIn delay={0.1} className="relative">
               <div className="rounded-[32px] border border-white/15 bg-white/10 p-6 shadow-2xl shadow-[#00000030] backdrop-blur-xl sm:p-8">
                 <div className="rounded-[24px] bg-white/95 p-6 shadow-sm">
-                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#1594C9]">
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-secondary)]">
                     Live cohort
                   </p>
-                  <h2 className="mt-4 text-2xl font-bold text-[#082C5C]">
+                  <h2 className="mt-4 text-2xl font-bold text-[var(--color-primary)]">
                     Certified Learning & Development Manager
                   </h2>
                   <p className="mt-4 text-sm leading-6 text-slate-600">
@@ -101,12 +101,12 @@ export default function Home() {
                     development with practical, human-centered training tools.
                   </p>
                   <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-3xl bg-[#F4F7FA] p-4 text-sm text-slate-600">
-                      <p className="font-semibold text-[#082C5C]">₹29,500 + 18% GST</p>
+                    <div className="rounded-3xl bg-[var(--color-background)] p-4 text-sm text-slate-600">
+                      <p className="font-semibold text-[var(--color-primary)]">â‚¹29,500 + 18% GST</p>
                     </div>
-                    <div className="rounded-3xl bg-[#F4F7FA] p-4 text-sm text-slate-600">
-                      <p className="font-semibold text-[#082C5C]">
-                        04 Weeks Live · 06 Weeks Blended
+                    <div className="rounded-3xl bg-[var(--color-background)] p-4 text-sm text-slate-600">
+                      <p className="font-semibold text-[var(--color-primary)]">
+                        04 Weeks Live Â· 06 Weeks Blended
                       </p>
                     </div>
                   </div>
@@ -116,9 +116,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <ProgramsCarousel />
 
+      <ProgramsCarousel />
 
       {/* <section className="border-y border-[#DCECF5] bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -126,9 +125,9 @@ export default function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
               Trusted by institutions and people teams
             </p>
-            <div className="grid gap-4 text-sm font-semibold text-[#082C5C] sm:grid-cols-3 lg:grid-cols-6">
+            <div className="grid gap-4 text-sm font-semibold text-[var(--color-primary)] sm:grid-cols-3 lg:grid-cols-6">
               {trustedPartners.map((partner) => (
-                <div key={partner} className="rounded-full bg-[#F4F7FA] px-4 py-3 text-center">
+                <div key={partner} className="rounded-full bg-[var(--color-background)] px-4 py-3 text-center">
                   {partner}
                 </div>
               ))}
@@ -137,60 +136,56 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="py-5 bg-[#F4F7FA]">
-  <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div className="grid items-center gap-16 lg:grid-cols-2">
-      
-      {/* Left Side */}
-      <FadeIn>
-        <p className="mb-4 text-2xl font-semibold tracking-[0.3em] text-[#1594C9]">
-          Who We Are
-        </p>
+      <section className="bg-[var(--color-background)] py-10 sm:py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
+            <FadeIn>
+              <p className="mb-4 text-lg font-semibold tracking-[0.2em] text-[var(--color-secondary)] sm:text-2xl sm:tracking-[0.3em]">
+                Who We Are
+              </p>
 
-        <p className="mt-2 text-lg leading-8 text-slate-600">
-          {homepageSections.whoWeAre}
-        </p>
+              <p className="mt-2 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+                {homepageSections.whoWeAre}
+              </p>
 
-        <h3 className="mt-2 text-2xl font-bold text-[#082C5C]">
-          {homepageSections.intersectionIntro}
-        </h3>
+              <h3 className="mt-4 text-xl font-bold text-[var(--color-primary)] sm:text-2xl">
+                {homepageSections.intersectionIntro}
+              </h3>
 
-        <div className="mt-2 space-y-2">
-          {homepageSections.intersectionAreas.map((item) => (
-            <div
-              key={item.title}
-              className="flex items-center gap-4"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#EAF4F9]">
-                <item.icon className="h-5 w-5 text-[#1594C9]" />
+              <div className="mt-4 space-y-3">
+                {homepageSections.intersectionAreas.map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex items-center gap-4"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-soft-accent)]">
+                      <item.icon className="h-5 w-5 text-[var(--color-secondary)]" />
+                    </div>
+
+                    <span className="text-base font-semibold text-[var(--color-primary)] sm:text-lg">
+                      {item.title}
+                    </span>
+                  </div>
+                ))}
               </div>
+            </FadeIn>
 
-              <span className="text-lg font-semibold text-[#082C5C]">
-                {item.title}
-              </span>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="relative">
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-[10px] bg-[var(--color-muted)]/30 blur-3xl sm:-right-6 sm:-top-6 sm:h-32 sm:w-32" />
 
-      {/* Right Side - Image Only */}
-      <FadeIn delay={0.1}>
-        <div className="relative">
-          <div className="absolute -top-6 -right-6 h-32 w-32 rounded-[10px] bg-[#8FCDFE]/30 blur-3xl" />
-
-          <div className="overflow-hidden rounded-[15px] border border-[#B9DDED] bg-white shadow-[0_28px_70px_rgba(8,44,92,0.12)]">
-            <img
-  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-  alt="Empowering Minds"
-  className="h-[450px] w-full object-cover"
-/>
+                <div className="overflow-hidden rounded-[15px] border border-[var(--color-border)] bg-white shadow-[0_28px_70px_rgba(35,66,78,0.12)]">
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+                    alt="Empowering Minds"
+                    className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[450px]"
+                  />
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
-      </FadeIn>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -266,11 +261,11 @@ export default function Home() {
             description="A growing resource hub for leaders, institutions, facilitators, and learners."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <FadeIn className="rounded-[32px] bg-[#082C5C] p-8 text-white shadow-[0_28px_70px_rgba(8,44,92,0.18)]">
-              <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-white/10 text-[#8FCDFE]">
+            <FadeIn className="rounded-[32px] bg-[var(--color-primary)] p-8 text-white shadow-[0_28px_70px_rgba(35,66,78,0.18)]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-white/10 text-[var(--color-muted)]">
                 <FeaturedResourceIcon size={26} />
               </div>
-              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#8FCDFE]">
+              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-muted)]">
                 Featured Resource
               </p>
               <h3 className="mt-4 text-3xl font-black tracking-tight">

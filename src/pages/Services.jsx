@@ -13,7 +13,7 @@ export default function Services() {
         description="Explore the core service areas we use to build confidence, capability, and long-term impact."
       />
 
-      <section className="py-24">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Service Areas"
@@ -27,15 +27,15 @@ export default function Services() {
                 <FadeIn
                   key={group.id}
                   delay={index * 0.05}
-                  className="rounded-[32px] border border-[#B9DDED] bg-white p-8 shadow-[0_18px_45px_rgba(8,44,92,0.05)]"
+                  className="rounded-[32px] border border-[var(--color-border)] bg-white p-5 shadow-[0_18px_45px_rgba(35,66,78,0.05)] sm:p-8"
                   id={group.id}
                 >
                   <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                     <div>
-                      <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-[#EAF7FD] text-[#1594C9]">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-[var(--color-soft-accent)] text-[var(--color-secondary)]">
                         <Icon size={26} />
                       </div>
-                      <h2 className="mt-5 text-3xl font-black tracking-tight text-[#082C5C]">
+                      <h2 className="mt-5 text-2xl font-black tracking-tight text-[var(--color-primary)] sm:text-3xl">
                         {group.title}
                       </h2>
                       <p className="mt-4 text-base leading-8 text-slate-600">
@@ -46,7 +46,7 @@ export default function Services() {
                       {group.services.map((service) => (
                         <div
                           key={service}
-                          className="rounded-[24px] bg-[#F8FBFF] p-5 text-sm font-semibold text-[#082C5C]"
+                          className="rounded-[24px] bg-[var(--color-background)] p-4 text-sm font-semibold text-[var(--color-primary)] sm:p-5"
                         >
                           {service}
                         </div>
