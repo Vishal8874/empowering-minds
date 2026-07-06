@@ -35,13 +35,11 @@ export default function TrainerProfile() {
               title={trainerProfile.name}
               description={trainerProfile.intro}
             />
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)]">
+            {/* <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)]">
               {trainerProfile.role}
-            </p>
-            <p className="mt-6 text-base leading-8 text-slate-600">
-              {trainerProfile.bio}
-            </p>
-            <div className="mt-8 grid gap-4">
+            </p> */}
+            
+            {/* <div className="mt-8 grid gap-4">
               {trainerProfile.highlights.map((highlight, index) => (
                 <FadeIn
                   key={highlight}
@@ -51,7 +49,7 @@ export default function TrainerProfile() {
                   {highlight}
                 </FadeIn>
               ))}
-            </div>
+            </div> */}
           </FadeIn>
         </div>
       </section>
