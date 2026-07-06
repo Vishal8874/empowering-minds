@@ -86,7 +86,7 @@ export default function ProgramsCarousel() {
         <div className="mb-8 flex flex-col gap-5 sm:mb-10 sm:flex-row sm:items-center sm:justify-between lg:mb-12">
           <div className="min-w-0">
             <h2 className="text-3xl font-black tracking-tight text-[var(--color-primary)] sm:text-4xl lg:text-5xl">
-              Trending & New Launch Programs
+              Upcoming Programs / Workshops
             </h2>
           </div>
 

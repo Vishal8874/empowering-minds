@@ -57,7 +57,7 @@ export default function Programs() {
   return (
     <main>
       <PageHero
-        eyebrow="Programs"
+        // eyebrow="Programs"
         title="A professional catalogue of transformational learning journeys"
         description="Search by need, filter by category, and explore program details built for institutions, teams, and learners."
       />

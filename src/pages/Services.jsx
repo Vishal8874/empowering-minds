@@ -8,7 +8,7 @@ export default function Services() {
   return (
     <main>
       <PageHero
-        eyebrow="Services"
+        // eyebrow="Services"
         title="Development solutions for people, leaders, students, and institutions"
         description="Explore the core service areas we use to build confidence, capability, and long-term impact."
       />

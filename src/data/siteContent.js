@@ -1,6 +1,5 @@
 import {
   ArrowUpRight,
-  BookOpen,
   BriefcaseBusiness,
   Building2,
   Compass,
@@ -14,14 +13,18 @@ import {
   Target,
   Trophy,
   Users,
+   Eye,
+  TrendingUp,
+  Leaf,
+  BookOpenCheck,
 } from "lucide-react";
 
 export const navLinks = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Programs", to: "/programs" },
-  { label: "Case Studies", to: "/case-studies" },
-  { label: "Resources", to: "/resources" },
+  { label: "Trainer Profile", to: "/trainer-profile" },
+  { label: "Empower U", to: "/empower-u" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -35,12 +38,12 @@ export const trustedPartners = [
 ];
 
 export const trainerProfile = {
-  name: "Dr. Ritu Sharma",
+  name: "Ira Saha",
   role: "Founder, Trainer & Human Capital Strategist",
   image:
     "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
   intro:
-    "With two decades of hands-on corporate and institutional experience, Dr. Ritu Sharma helps leaders, faculty, students, and people teams move from potential to practical transformation.",
+  "Over years of working with students, educators, professionals, and institutional leaders, Empowering Minds was founded to integrate Applied Psychology and structured Human Resource Development into academic and corporate environments—strengthening coping mechanisms, emotional regulation, leadership maturity, communication effectiveness, and performance enhancement to create measurable and sustainable transformation.",
   bio: "Her work blends leadership development, facilitation, coaching, and capability building into learning journeys.",
   highlights: [
     "20+ years across education, HR, and capability-building ecosystems",
@@ -49,42 +52,82 @@ export const trainerProfile = {
   ],
 };
 
+export const trainerPageContent = {
+  heroTitle: "Meet the facilitators who turn insight into visible growth.",
+  heroDescription:
+    "Our trainers bring together behavioural understanding, institutional context, and practical delivery experience to create learning journeys that feel credible, engaging, and outcomes-focused.",
+  learnPoints: [
+    {
+      title: "Practical industry and institutional exposure",
+      description:
+        "Our facilitators work across campuses, leadership teams, and people functions, so every session stays grounded in real contexts.",
+    },
+    {
+      title: "Behavioural transformation at the center",
+      description:
+        "We go beyond information delivery to build awareness, habits, communication confidence, and applied behaviour change.",
+    },
+    {
+      title: "Structured learning outcomes",
+      description:
+        "Programs are designed with clear developmental milestones, reflective exercises, and outcomes participants can track.",
+    },
+    {
+      title: "Real-world implementation mindset",
+      description:
+        "Every intervention is built to help learners apply frameworks, conversations, and decisions in their day-to-day environments.",
+    },
+  ],
+};
+
 export const homepageSections = {
   whoWeAre:
     "Empowering Minds is a Human Capital Development initiative focused on strengthening institutions and organisations through structured behavioural, emotional and mind-based transformation.",
   intersectionIntro: "We operate at the intersection of",
   intersectionAreas: [
-    {
-      title: "Human Capital Development",
-      description:
-        "Capability-building journeys that align learning, performance, and people growth.",
-      icon: BriefcaseBusiness,
-    },
-    {
-      title: "Leadership Development",
-      description:
-        "Leadership experiences that help emerging and senior leaders create momentum.",
-      icon: Trophy,
-    },
-    {
-      title: "Student Development",
-      description:
-        "Future-readiness programs that build communication, confidence, and employability.",
-      icon: GraduationCap,
-    },
-    {
-      title: "Institutional Growth",
-      description:
-        "Strategic interventions for faculty, academic leaders, and growing institutions.",
-      icon: Building2,
-    },
-    {
-      title: "Hands-on Corporate Experience",
-      description:
-        "Practical, business-grounded perspectives shaped by real workplace challenges.",
-      icon: Handshake,
-    },
-  ],
+  {
+    title: "Awareness",
+    description:
+      "Creating awareness through reflective and developmental interventions that strengthen understanding, sensitivity, and perspective.",
+    icon: Eye,
+  },
+  {
+    title: "Clarity",
+    description:
+      "Helping individuals gain clarity in thinking, communication, and emotional understanding for stronger decision-making and growth.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Capacity Building",
+    description:
+      "Building skills, competencies, and readiness through structured learning experiences and developmental engagement.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Sustainable Impact",
+    description:
+      "Designing interventions that create long-term value, behavioural transformation, and measurable outcomes beyond short-term change.",
+    icon: Leaf,
+  },
+  {
+    title: "Real World Learning",
+    description:
+      "Practical learning experiences grounded in real-life workplace, institutional, and performance-based challenges.",
+    icon: BookOpenCheck,
+  },
+ {
+    title: "Corporate Conditioning",
+    description:
+      "Preparing individuals and teams to align with workplace expectations, business culture, adaptability, and professional performance standards.",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "Institutional Development",
+    description:
+      "Strengthening institutions through people-focused, system-oriented, and growth-driven developmental interventions.",
+    icon: Building2,
+  },
+],
   approachIntro:
     "Our approach is designed to move participants from insight to action. Every engagement begins with context, builds capability through application, and stays focused on what shifts behavior in the real world.",
   approachPillars: [
@@ -142,57 +185,6 @@ export const impactStats = [
   { value: "150+", label: "Workshops and interventions delivered" },
   { value: "40+", label: "Institutional and corporate partners" },
   { value: "92%", label: "Participants reporting improved confidence" },
-];
-
-export const caseStudies = [
-  {
-    title: "Turning Faculty Development Into Institutional Momentum",
-    summary:
-      "A higher education group reimagined faculty capability-building with a blended development series focused on facilitation, leadership, and student engagement.",
-    outcome: "37% improvement in faculty engagement scores in one semester",
-    tags: ["Institutional Growth", "Faculty Development"],
-  },
-  {
-    title: "Building a Confident First-Time Manager Pipeline",
-    summary:
-      "A services organization launched a leadership lab for high-potential team leads transitioning into people management roles.",
-    outcome: "85% of participants reported stronger feedback and delegation skills",
-    tags: ["Leadership Programs", "Capability Building"],
-  },
-  {
-    title: "Career Readiness for Final-Year Students",
-    summary:
-      "A campus-to-career bootcamp focused on communication, employability, interviews, and professional presence.",
-    outcome: "2.1x increase in mock interview success rates",
-    tags: ["Student Development", "Career Readiness"],
-  },
-];
-
-export const resources = [
-  {
-    title: "Designing Learning That Sticks",
-    type: "Article",
-    description:
-      "A practical read on how reflection, relevance, and repetition improve learning transfer.",
-  },
-  {
-    title: "Leadership Conversation Toolkit",
-    type: "Download",
-    description:
-      "Conversation prompts and coaching questions for managers leading growth discussions.",
-  },
-  {
-    title: "Student Confidence Playbook",
-    type: "Learning Guide",
-    description:
-      "A structured guide to building confidence, communication, and readiness in learners.",
-  },
-  {
-    title: "Insight Note: Human-Centered Capability Building",
-    type: "Insight",
-    description:
-      "An executive snapshot of what modern organizations expect from development initiatives.",
-  },
 ];
 
 export const serviceGroups = [
@@ -486,6 +478,88 @@ export const aboutContent = {
   ],
 };
 
+export const trainers = [
+  {
+    id: 1,
+    name: "Dr. Ritu Sharma",
+    role: "Founder & Lead Trainer",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80",
+    shortBio:
+      "With two decades of corporate and institutional experience, Dr. Ritu Sharma helps leaders, faculty, students, and people teams move from potential to practical transformation.",
+    expertise: ["Leadership Development", "L&D", "OD", "Human Capital Development"],
+  },
+  {
+    id: 2,
+    name: "Ananya Verma",
+    role: "Communication & Behavioral Skills Trainer",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
+    shortBio:
+      "Ananya works with students and professionals to build confidence, communication clarity, and workplace readiness.",
+    expertise: ["Communication", "Confidence Building", "Interview Skills"],
+  },
+  {
+    id: 3,
+    name: "Rahul Mehta",
+    role: "Leadership & Performance Coach",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+    shortBio:
+      "Rahul specializes in leadership capability building, team performance, and manager effectiveness programs.",
+    expertise: ["Leadership", "Performance Coaching", "Team Effectiveness"],
+  },
+];
+
+export const empowerUContent = {
+  heroTitle: "A growth initiative for confidence, capability, and career momentum.",
+  heroDescription:
+    "Empower U is a signature development initiative by Empowering Minds designed to strengthen how students, early professionals, and emerging leaders communicate, think, and show up in high-opportunity environments.",
+  intro:
+    "Built as a practical growth platform, Empower U blends mindset work with real-world readiness. It helps participants develop confidence, communication, employability, and leadership presence through guided learning experiences that move from self-awareness to visible application.",
+  focusAreas: [
+    {
+      title: "Communication & Confidence",
+      description:
+        "Build clarity in expression, reduce hesitation, and strengthen presence in classrooms, interviews, and workplace conversations.",
+      icon: HeartHandshake,
+    },
+    {
+      title: "Career Readiness",
+      description:
+        "Develop interview readiness, professional etiquette, and the ability to position strengths with confidence.",
+      icon: BriefcaseBusiness,
+    },
+    {
+      title: "Leadership Mindset",
+      description:
+        "Strengthen ownership, initiative, and decision-making habits that prepare participants to lead with maturity.",
+      icon: Sparkles,
+    },
+    {
+      title: "Personal Effectiveness",
+      description:
+        "Sharpen focus, emotional regulation, self-management, and reflective practices that support consistent growth.",
+      icon: Target,
+    },
+    {
+      title: "Workplace Readiness",
+      description:
+        "Prepare for real-world expectations around collaboration, adaptability, accountability, and execution.",
+      icon: ShieldCheck,
+    },
+  ],
+  audienceGroups: [
+    "Students",
+    "Fresh graduates",
+    "Early professionals",
+    "Aspiring leaders",
+  ],
+  deliveryFormats: [
+    "Workshops",
+    "Bootcamps",
+    "Guided cohorts",
+    "Institutional interventions",
+  ],
+};
+
 export const contactDetails = {
   phone: "+91 9794278786",
   email: "contact@empoweringminds.in",
@@ -509,10 +583,3 @@ export const faqs = [
       "Our programs support students, faculty, academic leaders, HR teams, managers, and senior leadership groups.",
   },
 ];
-
-export const featuredResource = {
-  title: "The Empowering Minds Learning Journal",
-  description:
-    "A featured reflection resource for participants to translate workshop insight into practical weekly action.",
-  icon: BookOpen,
-};

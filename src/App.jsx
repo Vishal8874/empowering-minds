@@ -3,12 +3,12 @@ import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
 import WhatsAppFloat from "./components/common/WhatsAppFloat";
 import About from "./pages/About";
-import CaseStudies from "./pages/CaseStudies";
 import Contact from "./pages/Contact";
+import EmpowerU from "./pages/EmpowerU";
 import Home from "./pages/Home";
 import Programs from "./pages/Programs";
-import Resources from "./pages/Resources";
 import Services from "./pages/Services";
+import TrainerProfile from "./pages/TrainerProfile";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/programs" element={<Programs />} />
-        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/resources" element={<Resources />} />
+        <Route path="/trainer-profile" element={<TrainerProfile />} />
+        <Route path="/empower-u" element={<EmpowerU />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <WhatsAppFloat />

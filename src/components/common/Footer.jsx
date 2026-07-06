@@ -4,7 +4,6 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa";
 import { contactDetails, navLinks } from "../../data/siteContent";
 
@@ -52,14 +51,7 @@ export default function Footer() {
                 <FaLinkedinIn size={16} />
               </a>
 
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-primary)] transition-all duration-300 hover:bg-[var(--color-secondary)] hover:text-white"
-              >
-                <FaYoutube size={16} />
-              </a>
+              
             </div>
           </div>
 

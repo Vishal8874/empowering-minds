@@ -1,20 +1,15 @@
 import {
-  caseStudies,
-  featuredResource,
+  empowerUContent,
   homepageSections,
   impactStats,
-  resources,
   testimonials,
-  trainerProfile,
-  trustedPartners,
+  trainers,
 } from "../data/siteContent";
 import ProgramsCarousel from "../components/sections/ProgramsCarousel";
 import CTAButton from "../components/ui/CTAButton";
 import CTASection from "../components/ui/CTASection";
-import CaseStudyCard from "../components/ui/CaseStudyCard";
 import FeatureCard from "../components/ui/FeatureCard";
 import FadeIn from "../components/ui/FadeIn";
-import ResourceCard from "../components/ui/ResourceCard";
 import SectionHeader from "../components/ui/SectionHeader";
 import StatCard from "../components/ui/StatCard";
 import TestimonialCard from "../components/ui/TestimonialCard";
@@ -27,8 +22,6 @@ const heroGradientOpacity = {
 };
 
 export default function Home() {
-  const FeaturedResourceIcon = featuredResource.icon;
-
   return (
     <main>
       <section
@@ -55,14 +48,22 @@ export default function Home() {
           <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <FadeIn className="max-w-2xl">
               <h1 className="mt-6 text-3xl font-black tracking-tight text-white sm:mt-8 sm:text-5xl lg:text-6xl">
-                Developing <span className="text-[var(--color-secondary)]">People</span>.
+                Where Human{" "}
+                <span className="text-[var(--color-secondary)]">Potential</span>
+                .
                 <br />
-                Transforming <span className="text-[var(--color-secondary)]">Institutions</span>.
+                Meets{" "}
+                <span className="text-[var(--color-secondary)]">
+                  Structured Development
+                </span>
+                .
               </h1>
               <p className="mt-6 max-w-xl text-sm leading-7 text-slate-200 sm:mt-8 sm:text-base sm:leading-8 lg:text-lg">
-                We help educational institutions, corporate teams, and emerging
-                leaders unlock their potential through leadership development,
-                human capital training, and transformational learning experiences.
+                We design structured developmental interventions aligned with
+                measurable institutional and organisational outcomes. We do not
+                only conduct workshops. We engineer ecosystems which transform
+                employees into performance multipliers leading to enhanced
+                productivity & accelerated profits
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
@@ -154,10 +155,7 @@ export default function Home() {
 
               <div className="mt-4 space-y-3">
                 {homepageSections.intersectionAreas.map((item) => (
-                  <div
-                    key={item.title}
-                    className="flex items-center gap-4"
-                  >
+                  <div key={item.title} className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-soft-accent)]">
                       <item.icon className="h-5 w-5 text-[var(--color-secondary)]" />
                     </div>
@@ -189,7 +187,10 @@ export default function Home() {
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="Discover Our Approach" title="Transformation that starts with clarity and ends in action" />
+          <SectionHeader
+            eyebrow="Discover Our Approach"
+            title="Transformation that starts with clarity and ends in action"
+          />
           <FadeIn className="mt-8 max-w-3xl">
             <p className="text-base leading-8 text-slate-600 sm:text-lg">
               {homepageSections.approachIntro}
@@ -241,49 +242,90 @@ export default function Home() {
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Case Studies"
-            title="Featured transformation stories"
-            description="Preview the outcomes our clients have created through targeted development interventions."
+            eyebrow="Trainer Profile"
+            title="Meet the experts behind every learning experience"
+            description="Our facilitators combine behavioural insight, practical frameworks, and delivery experience across institutions and teams."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {caseStudies.map((study, index) => (
-              <CaseStudyCard key={study.title} {...study} delay={index * 0.08} />
+            {trainers.map((trainer, index) => (
+              <FadeIn
+                key={trainer.id}
+                delay={index * 0.08}
+                className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm"
+              >
+                <img
+                  src={trainer.image}
+                  alt={trainer.name}
+                  className="h-72 w-full object-cover"
+                />
+                <div className="p-6">
+                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)]">
+                    {trainer.role}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-black tracking-tight text-[var(--color-primary)]">
+                    {trainer.name}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {trainer.shortBio}
+                  </p>
+                </div>
+              </FadeIn>
             ))}
           </div>
+          <FadeIn className="mt-10 flex justify-start">
+            <CTAButton to="/trainer-profile" variant="ghost">
+              Explore Trainer Profile
+            </CTAButton>
+          </FadeIn>
         </div>
       </section>
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Resources"
-            title="Articles, downloads, and learning guides"
-            description="A growing resource hub for leaders, institutions, facilitators, and learners."
+            eyebrow="Empower U"
+            title="A signature initiative for personal and professional growth"
+            description={empowerUContent.intro}
           />
-          <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
             <FadeIn className="rounded-[32px] bg-[var(--color-primary)] p-8 text-white shadow-[0_28px_70px_rgba(35,66,78,0.18)]">
-              <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-white/10 text-[var(--color-muted)]">
-                <FeaturedResourceIcon size={26} />
-              </div>
-              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-muted)]">
-                Featured Resource
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-muted)]">
+                Growth Platform
               </p>
               <h3 className="mt-4 text-3xl font-black tracking-tight">
-                {featuredResource.title}
+                {empowerUContent.heroTitle}
               </h3>
               <p className="mt-4 max-w-xl text-base leading-8 text-slate-200">
-                {featuredResource.description}
+                {empowerUContent.heroDescription}
               </p>
               <div className="mt-8">
-                <CTAButton to="/resources" variant="ghost">
-                  View Resource Library
+                <CTAButton to="/empower-u" variant="ghost">
+                  Discover Empower U
                 </CTAButton>
               </div>
             </FadeIn>
             <div className="grid gap-6">
-              {resources.slice(0, 3).map((resource, index) => (
-                <ResourceCard key={resource.title} {...resource} delay={index * 0.06} />
-              ))}
+              {empowerUContent.focusAreas.slice(0, 3).map((area, index) => {
+                const Icon = area.icon;
+
+                return (
+                  <FadeIn
+                    key={area.title}
+                    delay={index * 0.06}
+                    className="rounded-[28px] border border-[var(--color-border)] bg-white p-6 shadow-sm"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-soft-accent)] text-[var(--color-secondary)]">
+                      <Icon size={22} />
+                    </div>
+                    <h3 className="mt-5 text-xl font-bold text-[var(--color-primary)]">
+                      {area.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {area.description}
+                    </p>
+                  </FadeIn>
+                );
+              })}
             </div>
           </div>
         </div>

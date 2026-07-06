@@ -164,7 +164,7 @@ export default function Contact() {
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="FAQ" title="Common questions" />
+          <SectionHeader eyebrow="FAQ'S" title="Common questions" />
           <div className="mt-10 grid gap-4">
             {faqs.map((faq, index) => (
               <FadeIn
