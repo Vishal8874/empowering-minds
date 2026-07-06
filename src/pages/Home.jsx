@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   empowerUContent,
   homepageSections,
@@ -6,6 +7,7 @@ import {
   trainers,
 } from "../data/siteContent";
 import ProgramsCarousel from "../components/sections/ProgramsCarousel";
+import TrainerModal from "../components/sections/TrainerModal";
 import CTAButton from "../components/ui/CTAButton";
 import CTASection from "../components/ui/CTASection";
 import FeatureCard from "../components/ui/FeatureCard";
@@ -22,6 +24,8 @@ const heroGradientOpacity = {
 };
 
 export default function Home() {
+  const [selectedTrainer, setSelectedTrainer] = useState(null);
+
   return (
     <main>
       <section
@@ -251,24 +255,30 @@ export default function Home() {
               <FadeIn
                 key={trainer.id}
                 delay={index * 0.08}
-                className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm"
+                className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <img
-                  src={trainer.image}
-                  alt={trainer.name}
-                  className="h-72 w-full object-cover"
-                />
-                <div className="p-6">
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)]">
-                    {trainer.role}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-black tracking-tight text-[var(--color-primary)]">
-                    {trainer.name}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">
-                    {trainer.shortBio}
-                  </p>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedTrainer(trainer)}
+                  className="block w-full cursor-pointer text-left"
+                >
+                  <img
+                    src={trainer.image}
+                    alt={trainer.name}
+                    className="h-72 w-full object-cover"
+                  />
+                  <div className="p-6">
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)]">
+                      {trainer.role}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-black tracking-tight text-[var(--color-primary)]">
+                      {trainer.name}
+                    </h3>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">
+                      {trainer.shortBio}
+                    </p>
+                  </div>
+                </button>
               </FadeIn>
             ))}
           </div>
@@ -334,6 +344,11 @@ export default function Home() {
       <CTASection
         title="Ready to create meaningful transformation?"
         description="Whether you are developing leaders, preparing students, or strengthening institutions, we can shape a learning experience that fits your goals."
+      />
+
+      <TrainerModal
+        trainer={selectedTrainer}
+        onClose={() => setSelectedTrainer(null)}
       />
     </main>
   );

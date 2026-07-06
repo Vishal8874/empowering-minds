@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { aboutContent, trainerProfile, trainers } from "../data/siteContent";
+import TrainerModal from "../components/sections/TrainerModal";
 import CTASection from "../components/ui/CTASection";
 import FadeIn from "../components/ui/FadeIn";
 import PageHero from "../components/ui/PageHero";
 import SectionHeader from "../components/ui/SectionHeader";
 
 export default function About() {
+const [selectedTrainer, setSelectedTrainer] = useState(null);
+
 return (
 <main>
     <PageHero 
@@ -36,35 +40,40 @@ return (
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {trainers.map((trainer, index) => (
                 <FadeIn key={trainer.id} delay={index * 0.08}
-                    className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm">
-                    <img src={trainer.image} alt={trainer.name} className="h-72 w-full object-cover" />
+                    className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <button
+                        type="button"
+                        onClick={() => setSelectedTrainer(trainer)}
+                        className="block w-full cursor-pointer text-left">
+                        <img src={trainer.image} alt={trainer.name} className="h-72 w-full object-cover" />
 
-                    <div className="p-6">
-                        <h3 className="text-2xl font-bold text-[var(--color-secondary)]">
-                            {trainer.name}
-                        </h3>
+                        <div className="p-6">
+                            <h3 className="text-2xl font-bold text-[var(--color-secondary)]">
+                                {trainer.name}
+                            </h3>
 
-                        {/* <h3 className="mt-3 text-2xl font-bold text-[var(--color-primary)]">
-                            {trainer.name}
-                        </h3> */}
+                            {/* <h3 className="mt-3 text-2xl font-bold text-[var(--color-primary)]">
+                                {trainer.name}
+                            </h3> */}
 
-                        <p className="mt-2 text-sm font-medium text-slate-500">
-                            {trainer.role}
-                        </p>
+                            <p className="mt-2 text-sm font-medium text-slate-500">
+                                {trainer.role}
+                            </p>
 
-                        <p className="mt-4 text-sm leading-7 text-slate-600">
-                            {trainer.shortBio}
-                        </p>
+                            <p className="mt-4 text-sm leading-7 text-slate-600">
+                                {trainer.shortBio}
+                            </p>
 
-                        <div className="mt-5 flex flex-wrap gap-2">
-                            {trainer.expertise.map((item) => (
-                            <span key={item}
-                                className="rounded-full border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1 text-xs font-medium text-[var(--color-primary)]">
-                                {item}
-                            </span>
-                            ))}
+                            <div className="mt-5 flex flex-wrap gap-2">
+                                {trainer.expertise.map((item) => (
+                                <span key={item}
+                                    className="rounded-full border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1 text-xs font-medium text-[var(--color-primary)]">
+                                    {item}
+                                </span>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    </button>
                 </FadeIn>
                 ))}
             </div>
@@ -121,6 +130,11 @@ return (
 
     <CTASection title="Let's create a development journey that fits your audience."
         description="Talk to us about workshops, leadership labs, institutional growth interventions, or customized learning experiences." />
+
+    <TrainerModal
+        trainer={selectedTrainer}
+        onClose={() => setSelectedTrainer(null)}
+    />
 </main>
 );
 }

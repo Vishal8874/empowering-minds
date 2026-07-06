@@ -486,7 +486,16 @@ export const trainers = [
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80",
     shortBio:
       "With two decades of corporate and institutional experience, Dr. Ritu Sharma helps leaders, faculty, students, and people teams move from potential to practical transformation.",
+    fullBio:
+      "Dr. Ritu Sharma brings a deep blend of leadership development, learning design, and institutional consulting experience to Empowering Minds. Her facilitation approach combines behavioural insight with structured capability-building so participants can strengthen confidence, leadership presence, communication, and execution in ways that are visible and sustainable.",
     expertise: ["Leadership Development", "L&D", "OD", "Human Capital Development"],
+    experience:
+      "20+ years across corporate learning, academic leadership development, and human capital capability-building.",
+    highlights: [
+      "Designed leadership and faculty development journeys for institutions and people teams",
+      "Guides participants from self-awareness to practical workplace and classroom application",
+      "Known for combining strategic clarity with reflective, people-centered facilitation",
+    ],
   },
   {
     id: 2,
@@ -495,7 +504,16 @@ export const trainers = [
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
     shortBio:
       "Ananya works with students and professionals to build confidence, communication clarity, and workplace readiness.",
+    fullBio:
+      "Ananya Verma specializes in helping learners express themselves with more clarity, confidence, and professional polish. Her sessions are interactive, practical, and closely aligned with real-world expectations around interviews, presentations, collaboration, and professional communication.",
     expertise: ["Communication", "Confidence Building", "Interview Skills"],
+    experience:
+      "10+ years facilitating communication, behavioural readiness, and employability-focused development programs.",
+    highlights: [
+      "Builds practical speaking confidence for students, graduates, and early professionals",
+      "Designs learning experiences around workplace etiquette, presentations, and interviews",
+      "Creates safe, high-engagement environments that improve clarity and self-belief",
+    ],
   },
   {
     id: 3,
@@ -504,7 +522,16 @@ export const trainers = [
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
     shortBio:
       "Rahul specializes in leadership capability building, team performance, and manager effectiveness programs.",
+    fullBio:
+      "Rahul Mehta works with managers and emerging leaders to strengthen accountability, people leadership, and team effectiveness. He focuses on translating leadership concepts into practical routines, clearer conversations, and stronger decision-making so participants can perform with more consistency and confidence.",
     expertise: ["Leadership", "Performance Coaching", "Team Effectiveness"],
+    experience:
+      "12+ years delivering manager effectiveness, performance coaching, and leadership readiness interventions.",
+    highlights: [
+      "Supports first-time and emerging leaders as they step into greater responsibility",
+      "Brings a strong execution lens to coaching, feedback, and performance conversations",
+      "Helps teams build clarity, ownership, and stronger collaboration habits",
+    ],
   },
 ];
 

@@ -1,14 +1,18 @@
+import { useState } from "react";
 import {
   trainerPageContent,
   trainerProfile,
   trainers,
 } from "../data/siteContent";
+import TrainerModal from "../components/sections/TrainerModal";
 import CTASection from "../components/ui/CTASection";
 import FadeIn from "../components/ui/FadeIn";
 import PageHero from "../components/ui/PageHero";
 import SectionHeader from "../components/ui/SectionHeader";
 
 export default function TrainerProfile() {
+  const [selectedTrainer, setSelectedTrainer] = useState(null);
+
   return (
     <main>
       <PageHero
@@ -67,36 +71,43 @@ export default function TrainerProfile() {
               <FadeIn
                 key={trainer.id}
                 delay={index * 0.08}
-                className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm"
+                className="overflow-hidden rounded-[28px] border border-[var(--color-border)] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <img
-                  src={trainer.image}
-                  alt={trainer.name}
-                  className="h-72 w-full object-cover"
-                />
+                <button
+                  type="button"
+                  onClick={() => setSelectedTrainer(trainer)}
+                  className="block w-full cursor-pointer text-left"
+                  aria-label={`View details for ${trainer.name}`}
+                >
+                  <img
+                    src={trainer.image}
+                    alt={trainer.name}
+                    className="h-72 w-full object-cover"
+                  />
 
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[var(--color-primary)]">
-                    {trainer.name}
-                  </h3>
-                  <p className="mt-2 text-sm font-medium text-slate-500">
-                    {trainer.role}
-                  </p>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">
-                    {trainer.shortBio}
-                  </p>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-[var(--color-primary)]">
+                      {trainer.name}
+                    </h3>
+                    <p className="mt-2 text-sm font-medium text-slate-500">
+                      {trainer.role}
+                    </p>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">
+                      {trainer.shortBio}
+                    </p>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {trainer.expertise.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1 text-xs font-medium text-[var(--color-primary)]"
-                      >
-                        {item}
-                      </span>
-                    ))}
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {trainer.expertise.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1 text-xs font-medium text-[var(--color-primary)]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </button>
               </FadeIn>
             ))}
           </div>
@@ -137,6 +148,11 @@ export default function TrainerProfile() {
         primaryTo="/contact"
         secondaryLabel="View programs"
         secondaryTo="/programs"
+      />
+
+      <TrainerModal
+        trainer={selectedTrainer}
+        onClose={() => setSelectedTrainer(null)}
       />
     </main>
   );
